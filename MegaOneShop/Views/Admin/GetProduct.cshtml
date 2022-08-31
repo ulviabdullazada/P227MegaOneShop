@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "GetProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<Product>
+<div class="container bg-white p-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>Subtitle</th>
+                <th>OldPrice</th>
+                <th>NewPrice</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Subtitle</td>
+                    <td>@item.OldPrice</td>
+                    <td>@item.NewPrice</td>
+                    <td> <img width="100" src="~/shop/img/@item.ImageUrl"></td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
